@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: whitesmoke;
+}
+#game{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+    overflow: hidden;
+}
+#character{
+    width: 30px;
+    height: 30px;
+    top: 266px;
+    background-color: blue;
+    position: relative;
+}
+.animate{
+    animation: charjump 0.5s;
+}
+#obstacle{
+    width: 0px;
+    height: 0px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid red;
+    position: relative;
+    top: 220px;
+    left: 446px;
+    animation: slide 1.5s infinite linear;
+}
+@keyframes slide{
+    0%{
+        left: 450px;
+    }
+    100%{
+        left: -450px;
+    }
+}
+@keyframes charjump{
+    0%{
+        top: 266px;
+    }
+    30%{
+        top: 200px;
+    }
+    50%{
+        top: 200px;
+    }
+    100%{
+        top: 266px;
+    }
+}
