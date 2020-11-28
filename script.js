@@ -7,17 +7,17 @@ function jump(){
     character.classList.add("animate");
     setTimeout(function(){
         character.classList.remove("animate");
-    },500);
+    },300);
 }
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"));
-    if(obstacleLeft < 30 && obstacleLeft > 0 && characterTop >= 230){
+    if(obstacleLeft < 60 && obstacleLeft > 0 && characterTop >= 230){
         obstacle.style.animation = "none";
         alert("Game Over!");
         obstacle.style.animation = "slide 1.5s infinite linear";
     }
-},10);
+},5);
 document.addEventListener("keydown", function(event){
     jump();
 });
